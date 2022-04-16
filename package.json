@@ -1,0 +1,106 @@
+{
+  "name": "search-vite",
+  "version": "0.12.1",
+  "scripts": {
+    "dev": "vite",
+    "dev--force": "vite --force",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "changelog": "release-it patch changelog",
+    "release": "dotenv release-it --no-increment --github.release --no-git --github.update",
+    "test": "vitest",
+    "coverage": "vitest --coverage",
+    "deploy": "gh-pages -d dist",
+    "nav": "cd ./tools/navigation && node index.js e",
+    "jscpd": "jscpd -r html ./src/"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.6.4",
+    "@emotion/css": "^11.1.3",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.2.5",
+    "@mui/lab": "^5.0.0-alpha.61",
+    "@mui/material": "^5.2.5",
+    "@mui/x-data-grid": "^5.2.2",
+    "@sentry/react": "^6.19.4",
+    "@sentry/tracing": "^6.19.4",
+    "antd": "^4.16.13",
+    "axios": "^0.21.4",
+    "bowser": "^2.11.0",
+    "bsdb": "^0.1.0",
+    "classnames": "^2.3.1",
+    "darkreader": "^4.9.46",
+    "dayjs": "^1.10.7",
+    "devtools-detect": "^4.0.0",
+    "github-markdown-css": "^5.0.0",
+    "i18next": "^21.2.4",
+    "i18next-browser-languagedetector": "^6.1.2",
+    "less": "^4.1.1",
+    "lodash": "^4.17.21",
+    "notistack": "^2.0.3",
+    "path": "^0.12.7",
+    "react": "^17.0.0",
+    "react-darkreader": "^1.5.6",
+    "react-dom": "^17.0.0",
+    "react-hook-form": "^7.25.0",
+    "react-i18next": "^11.12.0",
+    "react-markdown": "^7.1.0",
+    "react-router-dom": "^6.2.1",
+    "react-toastify": "^8.2.0",
+    "react-transition-group": "^4.4.2",
+    "react-virtuoso": "^2.2.7",
+    "remark-gfm": "^3.0.1",
+    "vmdc-ui": "^0.1.13"
+  },
+  "devDependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@release-it/conventional-changelog": "^3.3.0",
+    "@types/lodash": "^4.14.179",
+    "@types/node": "^16.9.1",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.8",
+    "@vitejs/plugin-react": "^1.1.3",
+    "@vitejs/plugin-react-refresh": "^1.3.1",
+    "autoprefixer": "^10.4.0",
+    "cz-conventional-changelog": "3.3.0",
+    "dotenv": "^10.0.0",
+    "gh-pages": "^3.2.3",
+    "jscpd": "^3.4.2",
+    "postcss": "^8.4.5",
+    "prettier": "^2.4.0",
+    "release-it": "^14.11.8",
+    "rollup-plugin-visualizer": "^5.5.2",
+    "tailwindcss": "^3.0.19",
+    "typescript": "^4.3.2",
+    "vite": "^2.9.1",
+    "vite-plugin-imp": "^2.0.11",
+    "vite-plugin-mdx": "^3.5.10",
+    "vite-plugin-pwa": "^0.11.2",
+    "vite-plugin-sentry": "^1.0.14",
+    "vitest": "^0.0.108"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "author": {
+    "name": "virzs",
+    "url": "https://github.com/virzs"
+  }
+}
